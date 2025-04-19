@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Data Visualizer</title>
+</head>
+<body>
+    <h1>Stock Chart Generator</h1>
+    <form method="POST">
+        <label>Stock Symbol:</label>
+        <input name="symbol" required><br><br>
+
+        <label>Chart Type:</label>
+        <select name="chart_type">
+            <option value="LINE">Line</option>
+            <option value="BAR">Bar</option>
+        </select><br><br>
+
+        <label>Time Series:</label>
+        <select name="time_series">
+            <option value="DAILY">Daily</option>
+            <option value="WEEKLY">Weekly</option>
+            <option value="MONTHLY">Monthly</option>
+        </select><br><br>
+
+        <label>Start Date:</label>
+        <input type="date" name="start_date" required><br><br>
+
+        <label>End Date:</label>
+        <input type="date" name="end_date" required><br><br>
+
+        <button type="submit">Generate Chart</button>
+    </form>
+
+    {% if chart_url %}
+        <h2>Your Chart:</h2>
+        <embed type="image/svg+xml" src="{{ chart_url }}" />
+        
+    {% endif %}
+</body>
+</html>

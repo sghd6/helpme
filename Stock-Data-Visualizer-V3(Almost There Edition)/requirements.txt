@@ -1,0 +1,6 @@
+flask
+redis
+requests
+pygal
+numpy
+lxml
